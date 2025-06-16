@@ -2,19 +2,21 @@ import React from "react";
 import { useState } from "react";
 
 const Login = () => {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log("hello Gyus form submit");
+    console.log("email is",email);
+    console.log("password is ",password);
+    setEmail("");
+    setPassword("");
+    
   };
   return (
     <div className="flex h-screen w-screen items-center justify-center bg-black">
       <div className="border-2 p-20  border-emerald-600 rounded-xl">
         <form
-          onSubmit={(e) => {
-            submitHandler(e);
-          }}
+          onSubmit={submitHandler}
           className=" flex flex-col items-center justify-center"
         >
           <input
@@ -28,10 +30,10 @@ const Login = () => {
             placeholder="Enter Your email"
           />
           <input
-          value={password}
-          onChange={(e)=>{
-            setPassword(e.target.value)
-          }}
+            value={password}
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
             required
             className="outline-none border-2 text-white bg-black border-emerald-600 rounded-full py-3 px-5 text-xl mt-4 placeholder:text-white-100"
             type="password"
