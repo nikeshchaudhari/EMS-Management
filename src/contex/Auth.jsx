@@ -1,8 +1,13 @@
 import React from 'react'
 
-const Auth = () => {
+const Auth = ({children}) => {
   return (
-    <div>Auth</div>
+    <div >
+      <h1>
+        {children}
+
+      </h1>
+    </div>
   )
 }
 
